@@ -1,0 +1,17 @@
+.ofc {
+    object-fit: contain;
+  }
+  .card-text::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+  .card:hover .card-body{
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.151);
+  }
+  .no-copy {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
