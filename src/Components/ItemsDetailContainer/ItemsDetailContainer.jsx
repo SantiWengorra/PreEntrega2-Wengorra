@@ -1,22 +1,22 @@
-function ItemsDetailContainer({productName, productImg, productDetail, productPrice}) {
+import ItemsDetail from "./ItemsDetailComponents/ItemsDetail";
+import productos from "../../Arrays/Products";
+
+function ItemsDetailContainer({productId}) {
+    
+    const product = productos.find(p => p.productId === productId);
+    const productName = product ? product.prod : "N/A";
+    const productDetail = product ? product.detalles : "N/A";
+    const productImg = product ? product.img : "N/A";
+    const productPrice = product ? product.precio : "N/A";
+    
+
+    
     return (<>
-        <section className="container my-5">
-            <article className="row">
-                <div className="col-md-6">
-                    <img 
-                    src={productImg} 
-                    alt={productName} 
-                    className="img-fluid rounded shadow ofc"
-                    style={{ width: '100%', height: '100%', maxHeigh: '100%' }} />
-                </div>
-                <div className="col-md-6">
-                    <h1 className="display-4">{productName}</h1>
-                    <p className="lead">{productDetail}</p>
-                    <p className="h4 text-primary">Precio: ${productPrice}</p>
-                    <button className="btn btn-primary btn-lg mt-3">Agregar al Carrito</button>
-                </div>
-            </article>
-        </section>
+        <ItemsDetail 
+        productName={productName} 
+        productImg={productImg}
+        productDetail={productDetail} 
+        productPrice={productPrice}/>
         </>
     )
 }
